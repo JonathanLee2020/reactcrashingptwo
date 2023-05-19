@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom"
 
-function Users () {
+function Users() {
     let {userName} = useParams();
-    return <h1>{userName}</h1>
+    return (
+        <h1>{userName}</h1>
+    )
 }
 
 export default Users
