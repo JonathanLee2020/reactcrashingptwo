@@ -10,6 +10,7 @@ import Home from "./pages/Home.jsx"
 import Contact from "./pages/Contact.jsx"
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Nav from "./components/Nav.jsx"
+import Users from "./pages/Users.jsx"
 
 function App() {
   console.log("hello gamers, our app is starting")
@@ -40,8 +41,9 @@ function App() {
         <Nav />
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>c
+          <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/users/:userName" element={<Users />}></Route>
         </Routes>
       </Router>
     </div>
