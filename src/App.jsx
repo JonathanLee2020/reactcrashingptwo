@@ -5,6 +5,10 @@ import Modal from "./components/Modal.jsx"
 import React, { UseState } from "react";
 import { useState, useEffect } from 'react';
 import Counter from "./components/Counter.jsx"
+import About from "./pages/About.jsx"
+import Home from "./pages/Home.jsx"
+import Contact from "./pages/Contact.jsx"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   console.log("hello gamers, our app is starting")
@@ -25,33 +29,67 @@ function App() {
   }, [showModal])
 
   return (
-    <div className="App">
-      <Title></Title>
-      <div className="addTask">
-        <input type="text" onChange={(event) =>{
-          console.log(event.target.value);
-        }}/>
-        <button >Add Task</button>
-      </div>
-      <div className="todo__wrapper">
-        <Todo 
-        title="Finish being a hello"
-        paragraph = "wave"
-        deleteTask = {deleteTask}
-        />
-        <Todo 
-        title="Finish pull ups"
-        paragraph = "Lovely contraction on the back 🤤🤤🤤"
-        deleteTask = {deleteTask}
-        />
-        <Todo 
-        title="Finish saying hello"
-        paragraph = "say the words hello"
-        deleteTask = {deleteTask}
-        />
-      </div>
-      {showModal ? <Modal title="want to delete?🥺🥺"end="Leave😈"keep="Stay🥰" closeModal = {closeModal}/> : null}
+    <div>
+      <Router>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>c
+          <Route path="/contact" element={<Contact />}></Route>
+        </Routes>
+      </Router>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // <div className="App">
+    //   <Title></Title>
+    //   <div className="addTask">
+    //     <input type="text" onChange={(event) =>{
+    //       console.log(event.target.value);
+    //     }}/>
+    //     <button >Add Task</button>
+    //   </div>
+    //   <div className="todo__wrapper">
+    //     <Todo 
+    //     title="Finish being a hello"
+    //     paragraph = "wave"
+    //     deleteTask = {deleteTask}
+    //     />
+    //     <Todo 
+    //     title="Finish pull ups"
+    //     paragraph = "Lovely contraction on the back 🤤🤤🤤"
+    //     deleteTask = {deleteTask}
+    //     />
+    //     <Todo 
+    //     title="Finish saying hello"
+    //     paragraph = "say the words hello"
+    //     deleteTask = {deleteTask}
+    //     />
+    //   </div>
+    //   {showModal ? <Modal title="want to delete?🥺🥺"end="Leave😈"keep="Stay🥰" closeModal = {closeModal}/> : null}
+    // </div>
   );
 }
 
