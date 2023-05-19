@@ -9,6 +9,7 @@ import About from "./pages/About.jsx"
 import Home from "./pages/Home.jsx"
 import Contact from "./pages/Contact.jsx"
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Nav from "./components/Nav.jsx"
 
 function App() {
   console.log("hello gamers, our app is starting")
@@ -31,11 +32,12 @@ function App() {
   return (
     <div>
       <Router>
-        <nav>
+        {/* <nav>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
-        </nav>
+        </nav> */}
+        <Nav />
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>c
