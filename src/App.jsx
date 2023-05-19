@@ -8,7 +8,7 @@ import Counter from "./components/Counter.jsx"
 import About from "./pages/About.jsx"
 import Home from "./pages/Home.jsx"
 import Contact from "./pages/Contact.jsx"
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   console.log("hello gamers, our app is starting")
@@ -32,9 +32,9 @@ function App() {
     <div>
       <Router>
         <nav>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </nav>
         <Routes>
           <Route path='/' element={<Home />}></Route>
