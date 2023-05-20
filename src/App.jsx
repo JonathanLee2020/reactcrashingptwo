@@ -38,12 +38,14 @@ function App() {
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav> */}
-        <Nav />
+        {/* <Nav /> */}
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/users/:userName" element={<Users/ >}></Route>
+          <Route path="/users/:id" element={<Users />} />
+
+
         </Routes>
       </Router>
     </div>
